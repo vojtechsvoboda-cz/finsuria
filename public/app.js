@@ -1,6 +1,34 @@
 (() => {
   "use strict";
 
+  // ---------- Smooth scroll (Lenis) ----------
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const HEADER_OFFSET = -84;
+  let lenis = null;
+  if (window.Lenis && !reduceMotion) {
+    lenis = new window.Lenis({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true });
+    const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  }
+  const scrollToEl = (el) => {
+    if (lenis) lenis.scrollTo(el, { offset: HEADER_OFFSET, duration: 1.1 });
+    else el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  };
+  const scrollToY = (y) => {
+    if (lenis) lenis.scrollTo(y, { duration: 0.8 });
+    else window.scrollTo({ top: y, behavior: reduceMotion ? "auto" : "smooth" });
+  };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href");
+    const target = id === "#top" ? document.body : document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    if (id === "#top") scrollToY(0); else scrollToEl(target);
+    history.replaceState(null, "", id);
+  });
+
   // ---------- Header & menu ----------
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
@@ -111,7 +139,7 @@
       const first = steps[n - 1].querySelector("input:not([type=hidden]):not([tabindex='-1']), select, textarea");
       if (first) first.focus({ preventScroll: true });
       const top = card.getBoundingClientRect().top + window.scrollY - 100;
-      if (window.scrollY > top) window.scrollTo({ top, behavior: "smooth" });
+      if (window.scrollY > top) scrollToY(top);
     }
     if (n === 2) loadTurnstile();
   };
