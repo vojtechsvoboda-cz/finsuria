@@ -24,6 +24,63 @@
 
   document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
+  // ---------- Hero house: the sun comes out ----------
+  const art = document.querySelector(".hero-art");
+  if (art) {
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (canHover) {
+      art.addEventListener("mouseenter", () => art.classList.add("is-on"));
+      art.addEventListener("mouseleave", () => art.classList.remove("is-on"));
+    } else {
+      // touch: light up once the drawing has finished, tap toggles
+      setTimeout(() => art.classList.add("is-on"), 2300);
+      art.addEventListener("click", () => art.classList.toggle("is-on"));
+    }
+  }
+
+  // ---------- Menu: highlight the section in view ----------
+  const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+  const sections = navLinks
+    .map((a) => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+  const setCurrent = () => {
+    const line = window.innerHeight * 0.35;
+    let current = null;
+    for (const sec of sections) {
+      const r = sec.getBoundingClientRect();
+      if (r.top <= line && r.bottom > line) current = sec.id;
+    }
+    // bottom of page → last section
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = sections.at(-1)?.id;
+    navLinks.forEach((a) => {
+      const on = a.getAttribute("href") === `#${current}`;
+      a.classList.toggle("is-current", on);
+      if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+  };
+
+  // ---------- Process timeline fills as you scroll ----------
+  const stepsList = document.querySelector(".steps");
+  const stepItems = stepsList ? [...stepsList.children] : [];
+  const setProgress = () => {
+    if (!stepsList) return;
+    const r = stepsList.getBoundingClientRect();
+    const line = window.innerHeight * 0.6;
+    const p = Math.min(1, Math.max(0, (line - r.top - 20) / (r.height - 40)));
+    stepsList.style.setProperty("--progress", p.toFixed(3));
+    stepItems.forEach((li) => li.classList.toggle("is-reached", li.getBoundingClientRect().top + 20 <= line));
+  };
+
+  let ticking = false;
+  const onScrollWork = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { setCurrent(); setProgress(); ticking = false; });
+  };
+  window.addEventListener("scroll", onScrollWork, { passive: true });
+  window.addEventListener("resize", onScrollWork);
+  onScrollWork();
+
   // ---------- Form ----------
   const form = document.getElementById("poptavka");
   if (!form) return;

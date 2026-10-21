@@ -11,9 +11,9 @@
   <meta property="og:description" content="Posoudíme náklady na energie vašeho domu, prověříme tepelné čerpadlo nebo fotovoltaiku a provedeme SVJ celým procesem až k realizaci.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/schibsted-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -53,42 +53,61 @@
         </div>
 
         <figure class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 420 440" class="house" fill="none">
-            <!-- ground -->
-            <line class="draw" x1="10" y1="420" x2="410" y2="420" />
-            <!-- facade -->
-            <rect class="draw" x="60" y="110" width="250" height="310" />
-            <!-- roof edge -->
-            <line class="draw" x1="50" y1="110" x2="320" y2="110" />
-            <!-- PV panels on roof -->
-            <g class="accent">
-              <path class="draw" d="M78 104 L98 72 L158 72 L138 104 Z" />
-              <path class="draw" d="M148 104 L168 72 L228 72 L208 104 Z" />
-              <path class="draw" d="M218 104 L238 72 L298 72 L278 104 Z" />
-              <line class="draw thin" x1="88" y1="88" x2="148" y2="88" />
-              <line class="draw thin" x1="158" y1="88" x2="218" y2="88" />
-              <line class="draw thin" x1="228" y1="88" x2="288" y2="88" />
+          <svg viewBox="0 0 440 440" class="house" fill="none">
+            <!-- sun -->
+            <g class="sun">
+              <g class="sun-rays"><line x1="46" y1="20" x2="46" y2="12" transform="rotate(0 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(45 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(90 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(135 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(180 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(225 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(270 46 46)" /><line x1="46" y1="20" x2="46" y2="12" transform="rotate(315 46 46)" /></g>
+              <circle class="sun-core" cx="46" cy="46" r="15" />
             </g>
-            <!-- window grid: 4 cols x 6 rows -->
+            <!-- sun beams to panels -->
+            <g class="beams">
+              <line x1="66" y1="60" x2="112" y2="88" />
+              <line x1="70" y1="52" x2="184" y2="86" />
+              <line x1="72" y1="44" x2="256" y2="84" />
+            </g>
+            <!-- ground -->
+            <line class="draw" x1="10" y1="420" x2="430" y2="420" />
+            <!-- facade -->
+            <rect class="draw facade" x="70" y="120" width="240" height="300" />
+            <line class="draw" x1="60" y1="120" x2="320" y2="120" />
+            <!-- PV panels -->
+            <g class="accent panels">
+              <g class="panel">
+                <path class="draw" d="M86 114 L106 82 L156 82 L136 114 Z" />
+                <line class="draw thin" x1="96" y1="98" x2="146" y2="98" />
+                <line class="draw thin" x1="121" y1="82" x2="111" y2="114" />
+              </g>
+              <g class="panel">
+                <path class="draw" d="M158 114 L178 82 L228 82 L208 114 Z" />
+                <line class="draw thin" x1="168" y1="98" x2="218" y2="98" />
+                <line class="draw thin" x1="193" y1="82" x2="183" y2="114" />
+              </g>
+              <g class="panel">
+                <path class="draw" d="M230 114 L250 82 L300 82 L280 114 Z" />
+                <line class="draw thin" x1="240" y1="98" x2="290" y2="98" />
+                <line class="draw thin" x1="265" y1="82" x2="255" y2="114" />
+              </g>
+            </g>
+            <!-- windows -->
             <g class="windows">
-              <rect x="84" y="134" width="34" height="26" /><rect x="138" y="134" width="34" height="26" /><rect x="198" y="134" width="34" height="26" /><rect x="252" y="134" width="34" height="26" />
-              <rect x="84" y="178" width="34" height="26" /><rect x="138" y="178" width="34" height="26" /><rect x="198" y="178" width="34" height="26" /><rect x="252" y="178" width="34" height="26" />
-              <rect x="84" y="222" width="34" height="26" /><rect x="138" y="222" width="34" height="26" /><rect x="198" y="222" width="34" height="26" /><rect x="252" y="222" width="34" height="26" />
-              <rect x="84" y="266" width="34" height="26" /><rect x="138" y="266" width="34" height="26" /><rect x="198" y="266" width="34" height="26" /><rect x="252" y="266" width="34" height="26" />
-              <rect x="84" y="310" width="34" height="26" /><rect x="138" y="310" width="34" height="26" /><rect x="198" y="310" width="34" height="26" /><rect x="252" y="310" width="34" height="26" />
+              <rect x="94" y="144" width="34" height="26" rx="2" style="--i:16" /><rect x="148" y="144" width="34" height="26" rx="2" style="--i:17" /><rect x="204" y="144" width="34" height="26" rx="2" style="--i:18" /><rect x="258" y="144" width="34" height="26" rx="2" style="--i:19" /><rect x="94" y="188" width="34" height="26" rx="2" style="--i:12" /><rect x="148" y="188" width="34" height="26" rx="2" style="--i:13" /><rect x="204" y="188" width="34" height="26" rx="2" style="--i:14" /><rect x="258" y="188" width="34" height="26" rx="2" style="--i:15" /><rect x="94" y="232" width="34" height="26" rx="2" style="--i:8" /><rect x="148" y="232" width="34" height="26" rx="2" style="--i:9" /><rect x="204" y="232" width="34" height="26" rx="2" style="--i:10" /><rect x="258" y="232" width="34" height="26" rx="2" style="--i:11" /><rect x="94" y="276" width="34" height="26" rx="2" style="--i:4" /><rect x="148" y="276" width="34" height="26" rx="2" style="--i:5" /><rect x="204" y="276" width="34" height="26" rx="2" style="--i:6" /><rect x="258" y="276" width="34" height="26" rx="2" style="--i:7" /><rect x="94" y="320" width="34" height="26" rx="2" style="--i:0" /><rect x="148" y="320" width="34" height="26" rx="2" style="--i:1" /><rect x="204" y="320" width="34" height="26" rx="2" style="--i:2" /><rect x="258" y="320" width="34" height="26" rx="2" style="--i:3" />
             </g>
             <!-- entrance -->
-            <rect class="draw" x="166" y="362" width="38" height="58" />
-            <!-- heat pump unit -->
-            <g class="accent">
-              <rect class="draw" x="328" y="364" width="66" height="56" rx="3" />
-              <circle class="draw" cx="352" cy="392" r="16" />
-              <line class="draw thin" x1="352" y1="378" x2="352" y2="406" />
-              <line class="draw thin" x1="338" y1="392" x2="366" y2="392" />
-              <line class="draw thin" x1="376" y1="380" x2="388" y2="380" />
-              <line class="draw thin" x1="376" y1="388" x2="388" y2="388" />
-              <line class="draw thin" x1="376" y1="396" x2="388" y2="396" />
-              <path class="draw thin" d="M328 380 L310 380" />
+            <rect class="draw" x="172" y="362" width="36" height="58" />
+            <!-- cable: panels → facade → heat pump -->
+            <path class="cable" d="M300 114 L326 114 L326 380 L338 380" />
+            <path class="flow" d="M300 114 L326 114 L326 380 L338 380" />
+            <!-- heat pump -->
+            <g class="accent pump">
+              <rect class="draw" x="338" y="364" width="66" height="56" rx="3" />
+              <circle class="draw" cx="362" cy="392" r="16" />
+              <g class="fan">
+                <line class="thin" x1="362" y1="378" x2="362" y2="406" />
+                <line class="thin" x1="348" y1="392" x2="376" y2="392" />
+              </g>
+              <line class="draw thin" x1="384" y1="380" x2="396" y2="380" />
+              <line class="draw thin" x1="384" y1="388" x2="396" y2="388" />
+              <line class="draw thin" x1="384" y1="396" x2="396" y2="396" />
             </g>
           </svg>
         </figure>
@@ -103,22 +122,22 @@
         </div>
         <ul class="services">
           <li>
-            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26V14M13 26V8M20 26V17M27 26V11"/></svg>
+            <span class="ico-wrap"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26V14M13 26V8M20 26V17M27 26V11"/></svg></span>
             <h3>Optimalizace provozních nákladů</h3>
             <p>Analýza nákladů na elektřinu, vytápění a přípravu teplé vody.</p>
           </li>
           <li>
-            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 9v7l5 3"/></svg>
+            <span class="ico-wrap"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 9v7l5 3"/></svg></span>
             <h3>Posouzení investic</h3>
             <p>Ekonomické a technické posouzení, zda má pro konkrétní dům smysl tepelné čerpadlo, fotovoltaika nebo jiné řešení.</p>
           </li>
           <li>
-            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 25h18M9 25V11l7-5 7 5v14M13 25v-7h6v7"/></svg>
+            <span class="ico-wrap"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 25h18M9 25V11l7-5 7 5v14M13 25v-7h6v7"/></svg></span>
             <h3>Návrh vhodného řešení</h3>
             <p>Pomoc s technickým zadáním a porovnáním možných variant.</p>
           </li>
           <li>
-            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17l6 6L26 9"/></svg>
+            <span class="ico-wrap"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17l6 6L26 9"/></svg></span>
             <h3>Výběr dodavatele a realizace</h3>
             <p>Poptávka dodavatelů, vyhodnocení nabídek, kontrola průběhu projektu a dohled nad realizací.</p>
           </li>
@@ -132,7 +151,6 @@
         <div class="process-intro">
           <h2 id="spoluprace-title">Jak spolupráce probíhá</h2>
           <p>Výbor SVJ tak nemusí sám hledat dodavatele, porovnávat technická řešení ani hlídat jednotlivé kroky projektu.</p>
-          <p class="legend"><span class="dot dot-ring" aria-hidden="true"></span> Kroky, ve kterých rozhoduje SVJ</p>
         </div>
         <ol class="steps">
           <li>
@@ -159,7 +177,7 @@
           <li class="is-svj">
             <span class="step-n">4</span>
             <div>
-              <h3>Rozhodnutí SVJ</h3>
+              <h3>Rozhodnutí SVJ <span class="tag">Rozhoduje SVJ</span></h3>
               <p>Výbor dostane podklady pro rozhodnutí a sám se rozhodne, zda chce v projektu pokračovat.</p>
             </div>
           </li>
@@ -173,7 +191,7 @@
           <li class="is-svj">
             <span class="step-n">6</span>
             <div>
-              <h3>Hlasování</h3>
+              <h3>Hlasování <span class="tag">Rozhoduje SVJ</span></h3>
               <p>Podpoříme výbor na shromáždění SVJ.</p>
             </div>
           </li>
