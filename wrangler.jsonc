@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "finsuria",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-15",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true },
+
+  // Záloha všech poptávek (Cloudflare D1)
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "finsuria-poptavky",
+      "database_id": "962a1f6f-6314-4d1b-9a35-1ee8e92e4c94"
+    }
+  ],
+
+  // Veřejné proměnné. Tajné klíče (TURNSTILE_SECRET_KEY) patří do Secrets v dashboardu.
+  "vars": {
+    "TURNSTILE_SITE_KEY": ""
+  }
+
+  // E-mail s poptávkou – zapnout, až poběží finsuria.cz na Cloudflare DNS
+  // a v Email Routing bude ověřená cílová adresa (viz README):
+  //
+  // ,"send_email": [
+  //   { "name": "EMAIL", "allowed_destination_addresses": ["kamil@finsuria.cz"] }
+  // ]
+  // a do "vars" přidat:
+  //   "LEAD_TO": "kamil@finsuria.cz",
+  //   "LEAD_FROM": "web@finsuria.cz"
+}

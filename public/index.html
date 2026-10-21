@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FINSURIA – úspory energií a investice pro SVJ</title>
+  <meta name="description" content="Pomáháme SVJ snižovat náklady na energie a správně rozhodovat o investicích do tepelných čerpadel, fotovoltaiky a dalších technologií. Od analýzy až po dohled nad realizací.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="FINSURIA – úspory energií a investice pro SVJ">
+  <meta property="og:description" content="Posoudíme náklady na energie vašeho domu, prověříme tepelné čerpadlo nebo fotovoltaiku a provedeme SVJ celým procesem až k realizaci.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="FINSURIA – na začátek stránky">
+        <span class="logo-word" aria-hidden="true">f<span class="logo-i">ı</span>nsur<span class="logo-i">ı</span>a</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav id="menu" class="nav" aria-label="Hlavní menu">
+        <a href="#sluzby">Služby</a>
+        <a href="#spoluprace">Jak spolupráce probíhá</a>
+        <a href="#proc">Proč FINSURIA</a>
+        <a href="#o-nas">O nás</a>
+        <a class="nav-cta" href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="obsah">
+
+    <!-- Úvod -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Pomáháme SVJ snižovat náklady na energie a správně rozhodovat o&nbsp;investicích do technologií.</h1>
+          <p class="lead">Posoudíme provozní náklady na elektřinu, vytápění a ohřev vody. Prověříme, zda dává smysl například tepelné čerpadlo nebo fotovoltaika, připravíme návrh řešení a provedeme SVJ celým procesem až k realizaci.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt" data-start-form>Chci posoudit náš dům</a>
+            <a class="btn btn-quiet" href="#spoluprace">Jak spolupráce probíhá</a>
+          </div>
+        </div>
+
+        <figure class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 420 440" class="house" fill="none">
+            <!-- ground -->
+            <line class="draw" x1="10" y1="420" x2="410" y2="420" />
+            <!-- facade -->
+            <rect class="draw" x="60" y="110" width="250" height="310" />
+            <!-- roof edge -->
+            <line class="draw" x1="50" y1="110" x2="320" y2="110" />
+            <!-- PV panels on roof -->
+            <g class="accent">
+              <path class="draw" d="M78 104 L98 72 L158 72 L138 104 Z" />
+              <path class="draw" d="M148 104 L168 72 L228 72 L208 104 Z" />
+              <path class="draw" d="M218 104 L238 72 L298 72 L278 104 Z" />
+              <line class="draw thin" x1="88" y1="88" x2="148" y2="88" />
+              <line class="draw thin" x1="158" y1="88" x2="218" y2="88" />
+              <line class="draw thin" x1="228" y1="88" x2="288" y2="88" />
+            </g>
+            <!-- window grid: 4 cols x 6 rows -->
+            <g class="windows">
+              <rect x="84" y="134" width="34" height="26" /><rect x="138" y="134" width="34" height="26" /><rect x="198" y="134" width="34" height="26" /><rect x="252" y="134" width="34" height="26" />
+              <rect x="84" y="178" width="34" height="26" /><rect x="138" y="178" width="34" height="26" /><rect x="198" y="178" width="34" height="26" /><rect x="252" y="178" width="34" height="26" />
+              <rect x="84" y="222" width="34" height="26" /><rect x="138" y="222" width="34" height="26" /><rect x="198" y="222" width="34" height="26" /><rect x="252" y="222" width="34" height="26" />
+              <rect x="84" y="266" width="34" height="26" /><rect x="138" y="266" width="34" height="26" /><rect x="198" y="266" width="34" height="26" /><rect x="252" y="266" width="34" height="26" />
+              <rect x="84" y="310" width="34" height="26" /><rect x="138" y="310" width="34" height="26" /><rect x="198" y="310" width="34" height="26" /><rect x="252" y="310" width="34" height="26" />
+            </g>
+            <!-- entrance -->
+            <rect class="draw" x="166" y="362" width="38" height="58" />
+            <!-- heat pump unit -->
+            <g class="accent">
+              <rect class="draw" x="328" y="364" width="66" height="56" rx="3" />
+              <circle class="draw" cx="352" cy="392" r="16" />
+              <line class="draw thin" x1="352" y1="378" x2="352" y2="406" />
+              <line class="draw thin" x1="338" y1="392" x2="366" y2="392" />
+              <line class="draw thin" x1="376" y1="380" x2="388" y2="380" />
+              <line class="draw thin" x1="376" y1="388" x2="388" y2="388" />
+              <line class="draw thin" x1="376" y1="396" x2="388" y2="396" />
+              <path class="draw thin" d="M328 380 L310 380" />
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Služby -->
+    <section class="section" id="sluzby" aria-labelledby="sluzby-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="sluzby-title">Co pro SVJ řešíme</h2>
+        </div>
+        <ul class="services">
+          <li>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26V14M13 26V8M20 26V17M27 26V11"/></svg>
+            <h3>Optimalizace provozních nákladů</h3>
+            <p>Analýza nákladů na elektřinu, vytápění a přípravu teplé vody.</p>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 9v7l5 3"/></svg>
+            <h3>Posouzení investic</h3>
+            <p>Ekonomické a technické posouzení, zda má pro konkrétní dům smysl tepelné čerpadlo, fotovoltaika nebo jiné řešení.</p>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 25h18M9 25V11l7-5 7 5v14M13 25v-7h6v7"/></svg>
+            <h3>Návrh vhodného řešení</h3>
+            <p>Pomoc s technickým zadáním a porovnáním možných variant.</p>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17l6 6L26 9"/></svg>
+            <h3>Výběr dodavatele a realizace</h3>
+            <p>Poptávka dodavatelů, vyhodnocení nabídek, kontrola průběhu projektu a dohled nad realizací.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Jak spolupráce probíhá -->
+    <section class="section section-mist" id="spoluprace" aria-labelledby="spoluprace-title">
+      <div class="wrap process-grid">
+        <div class="process-intro">
+          <h2 id="spoluprace-title">Jak spolupráce probíhá</h2>
+          <p>Výbor SVJ tak nemusí sám hledat dodavatele, porovnávat technická řešení ani hlídat jednotlivé kroky projektu.</p>
+          <p class="legend"><span class="dot dot-ring" aria-hidden="true"></span> Kroky, ve kterých rozhoduje SVJ</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-n">1</span>
+            <div>
+              <h3>Úvodní konzultace</h3>
+              <p>Zjistíme, co SVJ řeší, jaké má současné náklady a jaký je stav domu.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-n">2</span>
+            <div>
+              <h3>Analýza a návrh možností</h3>
+              <p>Vyhodnotíme současný provoz a připravíme možné varianty řešení.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-n">3</span>
+            <div>
+              <h3>Ekonomické posouzení</h3>
+              <p>Spočítáme investiční náklady, provozní úsporu a očekávanou návratnost jednotlivých variant.</p>
+            </div>
+          </li>
+          <li class="is-svj">
+            <span class="step-n">4</span>
+            <div>
+              <h3>Rozhodnutí SVJ</h3>
+              <p>Výbor dostane podklady pro rozhodnutí a sám se rozhodne, zda chce v projektu pokračovat.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-n">5</span>
+            <div>
+              <h3>Výběrové řízení</h3>
+              <p>Připravíme zadání, oslovíme dodavatele a pomůžeme nabídky technicky i ekonomicky porovnat.</p>
+            </div>
+          </li>
+          <li class="is-svj">
+            <span class="step-n">6</span>
+            <div>
+              <h3>Hlasování</h3>
+              <p>Podpoříme výbor na shromáždění SVJ.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-n">7</span>
+            <div>
+              <h3>Realizace</h3>
+              <p>Pohlídáme průběh projektu, koordinaci dodavatele a dokončení realizace.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="wrap">
+        <aside class="promise">
+          <p class="promise-title">Úvodní posouzení vás k ničemu nezavazuje.</p>
+          <p>Pokud se SVJ rozhodne projekt realizovat, cena za úvodní poradenskou část se mu vrátí formou slevy z&nbsp;realizace.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Proč FINSURIA -->
+    <section class="section" id="proc" aria-labelledby="proc-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="proc-title">Proč FINSURIA</h2>
+        </div>
+        <ul class="reasons">
+          <li>
+            <h3>Šetříme čas výboru SVJ</h3>
+            <p>Přebíráme organizaci a koordinaci celého procesu.</p>
+          </li>
+          <li>
+            <h3>Nejsme vázáni na jednu technologii</h3>
+            <p>Nejdříve hledáme smysluplné řešení pro konkrétní dům.</p>
+          </li>
+          <li>
+            <h3>Hlídáme ekonomiku investice</h3>
+            <p>Technologie musí dávat nejen technický, ale také ekonomický smysl.</p>
+          </li>
+          <li>
+            <h3>Jeden partner od návrhu po realizaci</h3>
+            <p>SVJ má jedno místo, na které se může během celého projektu obracet.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- O nás -->
+    <section class="section section-tight" id="o-nas" aria-labelledby="o-nas-title">
+      <div class="wrap">
+        <div class="about">
+        <h2 id="o-nas-title">O nás</h2>
+        <p class="about-text">FINSURIA s.r.o. pomáhá společenstvím vlastníků jednotek orientovat se v možnostech úspor energií a investicích do energetických technologií. Naším cílem je dát výboru SVJ dostatek informací pro správné rozhodnutí a následně převzít co největší část práce spojené s přípravou a realizací projektu.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="section contact" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="wrap contact-grid">
+        <div class="contact-intro">
+          <h2 id="kontakt-title">Chci posoudit náš dům</h2>
+          <p>Řešíte náklady na energie nebo uvažujete o investici do nového zdroje? Ozvěte se nám. Probereme základní situaci vašeho domu a navrhneme další postup.</p>
+          <ul class="contact-facts">
+            <li>Vyplnění zabere asi 2 minuty.</li>
+            <li>Ozveme se vám do dvou pracovních dnů.</li>
+            <li>Úvodní posouzení SVJ k ničemu nezavazuje.</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <form id="poptavka" class="form" novalidate>
+            <div class="form-progress" aria-hidden="true">
+              <span class="form-progress-bar"></span>
+            </div>
+            <p class="form-step-label" id="step-label" aria-live="polite">Krok 1 ze 2: Váš dům</p>
+
+            <!-- Krok 1 -->
+            <fieldset class="step" data-step="1">
+              <legend class="sr-only">Váš dům</legend>
+
+              <div class="field">
+                <span class="label" id="temata-label">S čím potřebujete pomoci?</span>
+                <div class="chips" role="group" aria-labelledby="temata-label">
+                  <label class="chip"><input type="checkbox" name="temata" value="Snížit náklady na energie"><span>Snížit náklady na energie</span></label>
+                  <label class="chip"><input type="checkbox" name="temata" value="Tepelné čerpadlo"><span>Tepelné čerpadlo</span></label>
+                  <label class="chip"><input type="checkbox" name="temata" value="Fotovoltaika"><span>Fotovoltaika</span></label>
+                  <label class="chip"><input type="checkbox" name="temata" value="Výběr dodavatele a realizace"><span>Výběr dodavatele a realizace</span></label>
+                  <label class="chip"><input type="checkbox" name="temata" value="Zatím nevíme"><span>Zatím nevíme</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" for="svj">SVJ / adresa domu <span class="req">*</span></label>
+                <input id="svj" name="svj" type="text" autocomplete="street-address" required maxlength="200" placeholder="např. SVJ Lipová 12, Brno">
+                <p class="error" data-for="svj"></p>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="pocet_jednotek">Počet bytových jednotek</label>
+                  <select id="pocet_jednotek" name="pocet_jednotek">
+                    <option value="">Vyberte</option>
+                    <option>do 12</option>
+                    <option>13–30</option>
+                    <option>31–60</option>
+                    <option>více než 60</option>
+                    <option>nevím</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="label" for="vytapeni">Jak dům nyní topí</label>
+                  <select id="vytapeni" name="vytapeni">
+                    <option value="">Vyberte</option>
+                    <option>Dálkové teplo (teplárna)</option>
+                    <option>Vlastní plynová kotelna</option>
+                    <option>Elektřina</option>
+                    <option>Jiný zdroj</option>
+                    <option>Nevím</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" for="zprava">S čím dalším potřebujete pomoci?</label>
+                <textarea id="zprava" name="zprava" rows="4" maxlength="3000" placeholder="Stačí pár vět, třeba co vás k poptávce vede nebo co už máte za sebou."></textarea>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-primary" data-next>Pokračovat na kontakt</button>
+              </div>
+            </fieldset>
+
+            <!-- Krok 2 -->
+            <fieldset class="step" data-step="2" hidden>
+              <legend class="sr-only">Kontaktní údaje</legend>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="jmeno">Jméno a příjmení <span class="req">*</span></label>
+                  <input id="jmeno" name="jmeno" type="text" autocomplete="name" required maxlength="120">
+                  <p class="error" data-for="jmeno"></p>
+                </div>
+                <div class="field">
+                  <label class="label" for="role">Vaše role <span class="req">*</span></label>
+                  <select id="role" name="role" required>
+                    <option value="">Vyberte</option>
+                    <option>Předseda výboru</option>
+                    <option>Člen výboru</option>
+                    <option>Člen SVJ</option>
+                    <option>Správce SVJ</option>
+                  </select>
+                  <p class="error" data-for="role"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="label" id="kontakt-pref-label">Jak vás máme kontaktovat?</span>
+                <div class="segmented" role="radiogroup" aria-labelledby="kontakt-pref-label">
+                  <label><input type="radio" name="preferovany_kontakt" value="Telefonicky" checked><span>Zavolejte mi</span></label>
+                  <label><input type="radio" name="preferovany_kontakt" value="E-mailem"><span>Napište mi</span></label>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="email">E-mail <span class="req">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" required maxlength="160" inputmode="email">
+                  <p class="error" data-for="email"></p>
+                </div>
+                <div class="field">
+                  <label class="label" for="telefon">Telefon <span class="req req-phone" hidden>*</span></label>
+                  <input id="telefon" name="telefon" type="tel" autocomplete="tel" maxlength="40" inputmode="tel" placeholder="+420">
+                  <p class="error" data-for="telefon"></p>
+                </div>
+              </div>
+
+              <!-- honeypot -->
+              <div class="hp" aria-hidden="true">
+                <label for="web">Web</label>
+                <input id="web" name="web" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div id="turnstile" class="turnstile"></div>
+
+              <p class="consent">Odesláním souhlasíte se zpracováním uvedených údajů za účelem vyřízení poptávky. Použijeme je jen k tomu, abychom se vám ozvali.</p>
+
+              <p class="form-error" role="alert" hidden></p>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-quiet" data-back>Zpět</button>
+                <button type="submit" class="btn btn-primary" data-submit>
+                  <span class="btn-label">Požádat o kontaktování</span>
+                </button>
+              </div>
+            </fieldset>
+          </form>
+
+          <div class="form-done" hidden tabindex="-1">
+            <svg class="done-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg>
+            <h3>Poptávku jsme přijali.</h3>
+            <p class="done-text">Ozveme se vám do dvou pracovních dnů.</p>
+            <button type="button" class="btn btn-quiet" data-reset>Poslat další poptávku</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="logo-word logo-small" aria-label="FINSURIA">f<span class="logo-i">ı</span>nsur<span class="logo-i">ı</span>a</span>
+      <p>FINSURIA s.r.o. © <span data-year>2026</span></p>
+      <p class="credit">Web: <a href="https://vojtechsvoboda.cz" target="_blank" rel="noopener">vojtechsvoboda.cz</a></p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
